@@ -1,0 +1,9 @@
+my_app_user_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: MyAppUserBundle:Default:index }
+user_delete:    
+    path:     /userdelete
+    defaults: { _controller: MyAppUserBundle:User:delete }
+user_list:
+    path:     /userlist
+    defaults: { _controller: MyAppUserBundle:User:list }

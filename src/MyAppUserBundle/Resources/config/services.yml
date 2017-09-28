@@ -1,0 +1,7 @@
+services:
+#    my_app_user.example:
+#        class: MyAppUserBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+    redirect.after.login:         
+        class: MyAppUserBundle\Redirection\AfterLoginRedirection         
+        arguments: ['@router', '@security.authorization_checker']

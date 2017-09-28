@@ -1,0 +1,43 @@
+{% extends "MyAppUserBundle::gridLayout.html.twig"%}
+{%block nomuser %} {{user}} {%endblock nomuser %}
+{%block javascript %}
+    <script>
+        function redpaste($id)
+        {
+            var url = '{{ path("update_info", {'id': 'id'}) }}';
+            url = url.replace("id", $id);
+            window.location.replace(url);
+        }
+    </script>
+{%endblock%}
+{% block body %}
+
+    <div class="container">
+        <form method="POST" name="form" action="{{ path('update_info') }}" >
+            <div id="form">
+                <input style="visibility: hidden" class="form-group form-control" id="id" name="id" type="number" value="{{users.id}}">
+                <label>Username:</label>
+                <input class="form-group form-control" id="username" name="username" type="text" value="{{users.username}}">
+                <label>email:</label>
+                <input class="form-group form-control" id="email" name="email" type="email" value="{{users.email}}">
+                <label>age:</label>
+                <input class="form-group form-control" id="age" name="age" type="text" value="{{users.ageed}}">
+                <label>famille:</label>
+                <input class="form-group form-control" id="famille" name="famille" type="text" value="{{users.famille}}">
+                <label>race:</label>
+                <input class="form-group form-control" id="race" name="race" type="text" value="{{users.race}}">
+                <label>nourriture:</label>
+                <input class="form-group form-control" id="nourriture" name="nourriture" type="text" value="{{users.nourriture}}">
+
+                <button type="submit"   >Mettre a jour</button>
+            </div>
+            <button type="submit"  formaction="{{ path('my_insect_count') }}">Retour</button>
+        </form>
+    </div>
+
+
+{% endblock %}
+{% block script %}
+    <script src="{{asset ('bundles/table.js')}}"></script>
+
+{% endblock script %}

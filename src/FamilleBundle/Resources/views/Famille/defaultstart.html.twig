@@ -1,0 +1,23 @@
+{# empty Twig template #}
+{% extends "MyAppUserBundle::gridLayout.html.twig"%}
+{%block nomuser %}
+    {{user}}
+{%endblock %}
+
+{%block body %}
+
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="panel panel-info">
+            <div align='center' class="panel-heading">
+            </div>
+            <a href="{{ path('edit_pro') }}">Consulter ou editer mes informations</a>
+            <br>
+            <a href="{{ path('add_friends') }}">Ajouter a la liste d amis</a>
+            <br>
+            <a href="{{ path('list_friends') }}">Ma liste d amis</a>
+
+        </div>
+    </div>
+
+{%endblock%}
+{%block space %} {%endblock space %}

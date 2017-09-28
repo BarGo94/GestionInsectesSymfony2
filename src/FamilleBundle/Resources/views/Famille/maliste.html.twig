@@ -1,0 +1,61 @@
+{% extends "MyAppUserBundle::gridLayout.html.twig"%}
+{%block nomuser %} {{user}} {%endblock nomuser %}
+{% block body %}
+
+    <div class="container">
+
+
+        <form method="POST" name="form">
+            <div style="float: left">
+                {% for u in usernames %}
+                    <input value="{{ u}}" readonly>
+                    <br>
+                {% endfor %}
+            </div>
+            <div style="float: left">
+                {% for u in ages %}
+                    <input value="{{ u}}" readonly>
+                    <br>
+                {% endfor %}
+            </div>
+            <div style="float: left">
+                {% for u in familles %}
+                    <input value="{{ u}}" readonly>
+                    <br>
+                {% endfor %}
+            </div>
+            <div style="float: left">
+                {% for u in races %}
+                    <input value="{{ u}}" readonly>
+                    <br>
+                {% endfor %}
+            </div>
+            <div style="float: left">
+                {% for u in nourritures %}
+                    <input  value="{{ u}}" readonly>
+                    <br>
+                {% endfor %}
+            </div>
+            <div style="float: left">
+                {% for u in ids %}
+                    <div style="margin-top: 6%"><a  href="{{ path('deletefromlist', {'id':u}) }}">Supprimer</a></div>
+                {% endfor %}
+            </div>
+
+
+
+
+
+
+        </form>
+        <br>
+
+
+
+    </div>
+    <a href="{{ path('my_insect_count') }}">Retour</a>
+{% endblock %}
+{% block script %}
+    <script src="{{asset ('bundles/table.js')}}"></script>
+
+{% endblock script %}

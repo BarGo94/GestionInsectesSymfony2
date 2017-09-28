@@ -1,0 +1,24 @@
+famille_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: FamilleBundle:Default:index }
+my_insect_count:
+    path:     /myaccount
+    defaults: { _controller: FamilleBundle:Accrec:ajoutaccrec }
+list_friends:
+    path:     /amis
+    defaults: { _controller: FamilleBundle:Accrec:listfriends }
+deletefromlist:
+    path:     /delete
+    defaults: { _controller: FamilleBundle:Accrec:deletefriend }
+addtolist:
+    path:     /friendadd
+    defaults: { _controller: FamilleBundle:Accrec:friendaddd }
+add_friends:
+    path:     /friend_add
+    defaults: { _controller: FamilleBundle:Accrec:friendadd }
+edit_pro:
+    path:     /edit
+    defaults: { _controller: FamilleBundle:Accrec:show }
+update_info:
+    path:     /update_info
+    defaults: { _controller: FamilleBundle:Accrec:updateinfo }
